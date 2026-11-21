@@ -1,0 +1,27 @@
+/* ---------- Ticker (أعلى الصفحة) ---------- */
+.ticker{position:absolute;top:112px;left:0;right:0;z-index:49;height:var(--tk);width:min(1250px,92%);margin:0 auto;border:1px solid var(--line);border-radius:0;box-shadow:var(--btn-sh);background:transparent;display:flex;align-items:stretch;overflow:hidden}
+.ticker .lbl{background:linear-gradient(135deg,#d0a04e,#b88438);color:#26254b;font-weight:700;padding:0 24px;white-space:nowrap;flex:none;display:flex;align-items:center;font-size:.92rem}
+.ticker .track{
+  flex:1;overflow:hidden;display:flex;align-items:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.05) 48%,transparent 51%),rgba(34,34,68,.58);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:inset 0 1px rgba(255,255,255,.28),inset 0 -1px rgba(255,255,255,.08);
+}
+.ticker-window{
+  display:flex;align-items:center;width:100%;min-width:0;overflow:hidden;
+  --exit-fade:linear-gradient(to right,transparent,#000 min(64px,18%));
+  -webkit-mask-image:var(--exit-fade);mask-image:var(--exit-fade);
+}
+.ticker .run{display:inline-flex;gap:60px;white-space:nowrap;padding:0 30px;animation:tick 45s linear infinite;font-size:.9rem}
+.ticker:hover .run{animation-play-state:paused}
+.ticker .run a{color:var(--txt)}.ticker .run a:hover{color:var(--gold2)}
+.ticker .run a::before{content:"◆";color:var(--gold);margin-inline-end:10px;font-size:.7rem}
+@keyframes tick{from{transform:translateX(50%)}to{transform:translateX(0)}}
+
+.ticker::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 12px rgba(20,20,52,.38);pointer-events:none;z-index:3}
+.ticker .lbl{position:relative;z-index:4;box-shadow:none}
+
+.ticker[hidden]{display:none}
+.ticker:focus-within .run{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.ticker .run{animation:none}.ticker-window{overflow-x:auto}}
+.ticker[data-editor]{position:relative;top:auto;margin:24px auto 0;background:#303054;--tk:44px;--txt:#fff;--gold:#dab05f;--gold2:#e4bc75;--line:#585875}

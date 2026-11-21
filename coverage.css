@@ -1,0 +1,28 @@
+.coverage {max-width:900px}
+.coverage .notice,.coverage fieldset,.coverage .delivery {padding:clamp(18px,4vw,32px);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);background:rgba(255,255,255,.035);min-width:0;margin:0 0 24px}
+.coverage .notice {border-inline:3px solid var(--gold)}
+.coverage strong,.coverage legend {color:var(--gold2);font-size:1.12rem;font-weight:700}
+.coverage legend {padding:0 8px}
+.coverage .fields {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+.coverage label {display:block}
+.coverage small,.coverage p,.coverage bdi {color:var(--muted)}
+.coverage input:not([type=checkbox]),.coverage select,.coverage textarea {display:block;width:100%;min-width:0;padding:11px 12px;margin-top:5px;color:white;background:#242442;border:1px solid #77758e;border-radius:9px;font:inherit;color-scheme:dark}
+.coverage textarea {resize:vertical}
+.coverage input:focus-visible,.coverage select:focus-visible,.coverage textarea:focus-visible,.coverage button:focus-visible {outline:2px solid var(--gold2);outline-offset:2px}
+.coverage .wide,.coverage #previous,.coverage #urgent {grid-column:1/-1}
+.coverage #previous label+label {margin-top:14px}
+.coverage .choices,.coverage .actions {display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:12px}
+.coverage .choices input {margin-inline-end:7px;accent-color:var(--gold)}
+.coverage .actions button:not(.primary) {background:transparent;border:1px solid var(--line);color:white}
+.coverage [hidden] {display:none!important}
+.coverage #status:not(:empty) {margin-top:14px}
+@media(max-width:640px){.coverage .fields{grid-template-columns:1fr}}
+
+.coverage .form-heading {color:var(--gold2);font-size:1.16rem;margin:28px 0 9px}
+.coverage .schedule-parts {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:5px}
+.coverage .schedule-parts label {color:var(--muted);font-size:.9rem}
+.coverage .schedule-parts select {padding-inline:6px}
+
+.coverage .delivery .actions {justify-content:center;align-items:center;gap:8px;margin-block:16px}
+.coverage #deliveryOptions:not([hidden]) {display:contents}
+.coverage .delivery .actions .btn {width:auto;min-width:0;justify-content:center;white-space:nowrap;padding:8px 15px;font-size:.92rem;line-height:1.45}

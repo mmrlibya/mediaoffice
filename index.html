@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2QQ9T7BYQZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2QQ9T7BYQZ');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>مكتب الإعلام والتواصل | وزارة الثروة البحرية</title>
@@ -16,11 +24,17 @@
   font-weight:400;
   font-display:swap;
 }
-.brand b,.brand small{font-family:'Ara Hamah AlFidaa','Readex Pro',sans-serif;font-weight:400;line-height:1.22}
+.brand b,.brand small,#officeName,#officeEn{font-family:'Ara Hamah AlFidaa','Readex Pro',sans-serif;font-weight:400}
+.brand b,.brand small{line-height:1.22}
+.office-caption{width:min(100%,19rem);container-type:inline-size;text-align:center;margin-top:36px}
+.office-caption #officeName{font-size:14.88cqi;margin:0;line-height:1.25;white-space:nowrap}
+.office-caption #officeEn{font-size:9.34cqi;letter-spacing:normal;line-height:1.2;white-space:nowrap}
+@media(max-width:900px){.office-caption{width:min(100%,17rem);margin-top:28px}}
 .brand b{font-size:clamp(1.45rem,2vw,1.75rem)}
 .brand small{display:block;font-size:clamp(.96rem,1.45vw,1.19rem);margin-top:3px}
 @media(max-width:480px){.brand{gap:9px}.brand small{max-width:18em}}
 </style>
+<link rel="stylesheet" href="ticker.css">
 </head>
 <body>
 
@@ -37,6 +51,8 @@
         <li><a href="#news">الأخبار</a></li>
         <li><a href="#about">عن المكتب</a></li>
         <li><a href="directory.html">دليل الصفحات المعتمدة</a></li>
+        <li><a href="coverage.html">طلب تغطية إعلامية</a></li>
+        <li><a href="/privacy-policy">سياسة الخصوصية</a></li>
         <li><a href="#contact">تواصل معنا</a></li>
       </ul>
     </nav>
@@ -45,7 +61,7 @@
 </header>
 
 <!-- Ticker -->
-<div class="ticker" id="tickerWrap">
+<div class="ticker" id="tickerWrap" hidden data-home="">
   <div class="lbl">أحدث الأخبار</div>
   <div class="track"><div class="ticker-window"><div class="run" id="tickerRun"></div></div></div>
 </div>
@@ -66,8 +82,10 @@
       </div>
       <div class="emblem">
         <div class="ring"><div class="emblem-face"><img src="images/logo.png" alt="شعار مكتب الإعلام والتواصل"></div></div>
-        <h2 id="officeName"></h2>
-        <small id="officeEn"></small>
+        <div class="office-caption">
+          <h2 id="officeName"></h2>
+          <small id="officeEn" lang="en" dir="ltr"></small>
+        </div>
       </div>
     </div>
     <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -137,7 +155,7 @@
 
 <footer id="footer">
   <div class="container"><p class="f1">كافة الحقوق محفوظة لمكتب الإعلام والتواصل بوزارة الثروة البحرية بحكومة الوحدة الوطنية 2026</p>
-    <p class="ministry-site">الموقع الإلكتروني الرسمي لوزارة الثروة البحرية<br>
+    <p class="ministry-site"><span>الموقع الإلكتروني الرسمي لوزارة الثروة البحرية</span>
       <a href="https://www.mmr.gov.ly/" dir="ltr" aria-label="زيارة الموقع الإلكتروني الرسمي لوزارة الثروة البحرية">
         www.mmr.gov.ly
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6m0-6L10 14M10 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-4"/></svg>
@@ -287,7 +305,7 @@ const ICONS={
   doc:S('<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/>'),
   heart:S('<path d="M12 20s-8-4.6-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.4 12 20 12 20z"/>'),
   pin:S('<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',22),
-  phone:S('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',22),
+  whatsapp:S('<path fill-rule="evenodd" d="M20.52 3.45A11.84 11.84 0 0 0 12.09 0C5.53 0 .2 5.33.2 11.89c0 2.09.54 4.13 1.58 5.93L.1 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.18-3.47-8.46ZM12.1 21.79h-.01c-1.78 0-3.53-.48-5.05-1.39l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.9-9.89a9.83 9.83 0 0 1 7 2.9 9.84 9.84 0 0 1 2.9 7c0 5.46-4.44 9.89-9.89 9.89Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.23-.65.08-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.19.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.42.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/>',26,'currentColor'),
   mail:S('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',22),
   clock:S('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',22),
   wave:S('<path d="M2 9c2.5-3 5-3 7.5 0s5 3 7.5 0 3-2 5-1M2 15c2.5-3 5-3 7.5 0s5 3 7.5 0 3-2 5-1"/>',70),
@@ -337,10 +355,6 @@ $("#plats").innerHTML=(SITE.platforms||[]).map(p=>`
     <span class="go">تابعنا <span>←</span></span>
   </a>`).join("");
 if(!(SITE.platforms||[]).length)$("#platforms").style.display="none";
-
-/* ticker */
-(function(){const it=news.slice(0,6).map(n=>`<a href="#news-${esc(n.id)}" data-open="${esc(n.id)}">${esc(n.title)}</a>`).join("");
-  $("#tickerRun").innerHTML=it+it;if(!news.length){$("#tickerWrap").style.display="none";document.documentElement.style.setProperty("--tk","0px")}})();
 
 /* featured slider */
 let slides=news.filter(n=>n.featured).slice(0,5);
@@ -420,8 +434,13 @@ if(location.hash.startsWith("#news-"))openNews(decodeURIComponent(location.hash.
 $("#services").innerHTML=SITE.services.map(s=>`<div class="srv dbl rv"><div class="ico">${ICONS[s.icon]||ICONS.star.replace(/70/g,'26')}</div><h4>${esc(s.title)}</h4><p>${esc(s.text)}</p></div>`).join("");
 $("#stats").innerHTML=SITE.stats.map(s=>`<div class="stat dbl rv"><b data-to="${s.value}" data-suf="${esc(s.suffix)}">0</b><span>${esc(s.label)}</span></div>`).join("");
 const C=SITE.contact;
-$("#cList").innerHTML=[[ICONS.pin,"العنوان",C.address],[ICONS.phone,"الهاتف",C.phone],[ICONS.mail,"البريد الإلكتروني",C.email],[ICONS.clock,"ساعات العمل",C.hours]]
-  .filter(r=>r[2]).map(r=>`<div class="c-item"><div class="ico">${r[0]}</div><div><b>${r[1]}</b><span><bdi dir="${r[0]===ICONS.phone ? 'ltr' : 'auto'}">${esc(r[2])}</bdi></span></div></div>`).join("");
+$("#cList").innerHTML=[[ICONS.pin,"العنوان",C.address],[ICONS.whatsapp,"واتساب",C.phone],[ICONS.mail,"البريد الإلكتروني",C.email],[ICONS.clock,"ساعات العمل",C.hours]]
+  .filter(row=>row[2]).map(([icon,label,value])=>{
+    const contact=icon===ICONS.whatsapp
+      ? `<a href="https://wa.me/${String(value).replace(/[^0-9]/g,'')}" target="_blank" rel="noopener" aria-label="مراسلة المكتب عبر واتساب"><bdi dir="ltr">${esc(value)}</bdi></a>`
+      : `<bdi dir="auto">${esc(value)}</bdi>`;
+    return `<div class="c-item"><div class="chip-ic${icon===ICONS.whatsapp ? ' whatsapp-icon' : ''}" aria-hidden="true">${icon}</div><div><b>${label}</b><span>${contact}</span></div></div>`;
+  }).join("");
 $("#mailBtn").href="mailto:"+(C.email||"");
 
 /* counters & reveal */
@@ -442,77 +461,8 @@ tt.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 $("#burger").onclick=()=>$("#nav").classList.toggle("open");
 $("#nav").onclick=e=>{if(e.target.tagName==="A")$("#nav").classList.remove("open")};
 
-/* ---------- ضبط النص بالكشيدة (تمديد الحروف بدل تباعد الكلمات) ---------- */
-(function(){
-  const JOIN=new Set("بتثجحخسشصضطظعغفقكلمنهيئ".split(""));
-  const ARB=/[ء-ي]/, TW="ـ", MAXW=4;
-  function positions(w){
-    const r=[];
-    for(let i=1;i<w.length-1;i++){
-      const c=w[i];
-      let next=i+1;
-      while(next<w.length&&/\p{Mark}/u.test(w[next]))next++;
-      const n=w[next]||"";
-      if(!JOIN.has(c)||!ARB.test(n))continue;
-      if(n==="ء"||(c==="ل"&&"اأإآ".includes(n)))continue;
-      r.push(next-1);
-    }
-    return r;
-  }
-  function withKashida(w,cnt,pos){
-    if(!cnt||!pos.length)return w;
-    const add={};
-    for(let k=0;k<cnt;k++){const p=pos[Math.floor(((k%pos.length)+0.5)*pos.length/Math.min(cnt,pos.length))]; add[p]=(add[p]||0)+1}
-    let o="";for(let i=0;i<w.length;i++){o+=w[i];if(add[i])o+=TW.repeat(add[i])}
-    return o;
-  }
-  function justify(el){
-    if(!el||el.offsetParent===null)return;
-    const text=el.dataset.orig||(el.dataset.orig=el.textContent.trim().replace(/\s+/g," "));
-    const words=text.split(" ");
-    el.style.textWrap="wrap";
-    el.style.display="block"; /* Measure every line before restoring the card excerpt clamp. */
-    el.innerHTML=words.map(w=>`<span>${esc(w)}</span>`).join(" ");
-    const sp=[...el.children], W=el.getBoundingClientRect().width;
-    const lines=[];let top=null;
-    sp.forEach((s,i)=>{const t=Math.round(s.getBoundingClientRect().top);if(top===null||Math.abs(t-top)>4){lines.push([]);top=t}lines[lines.length-1].push(i)});
-    const probe=document.createElement("span");probe.textContent=TW;el.appendChild(probe);
-    const tw=probe.getBoundingClientRect().width;probe.remove();
-    if(lines.length<2||!tw){el.textContent=text;el.style.removeProperty("display");return}
-    const html=lines.map((ln,li)=>{
-      if(li===lines.length-1)return `<span class="jl last">${ln.map(i=>esc(words[i])).join(" ")}</span>`;
-      const rs=ln.map(i=>sp[i].getBoundingClientRect());
-      const lineW=Math.max(...rs.map(r=>r.right))-Math.min(...rs.map(r=>r.left));
-      let n=Math.floor((W-lineW)/tw);
-      const pos=ln.map(i=>positions(words[i])), cnt=ln.map(()=>0);
-      let guard=0;
-      while(n>0&&guard++<400){
-        let moved=false;
-        for(let k=0;k<ln.length&&n>0;k++){if(pos[k].length&&cnt[k]<MAXW){cnt[k]++;n--;moved=true}}
-        if(!moved)break;
-      }
-      ln._cnt=cnt;ln._pos=pos;
-      return {ln,cnt,pos};
-    });
-    const build=o=>typeof o==="string"?o:`<span class="jl">${o.ln.map((i,k)=>esc(withKashida(words[i],o.cnt[k],o.pos[k]))).join(" ")}</span>`;
-    el.innerHTML=html.map(build).join(" ");
-    /* سلامة: إن زاد سطر عن العرض نُنقص الكشيدة حتى يتسع */
-    [...el.querySelectorAll(".jl:not(.last)")].forEach((node,li)=>{
-      const o=html[li];let g=0;
-      while(node.scrollWidth>node.clientWidth+0.5&&g++<40){
-        let m=0;o.cnt.forEach((c,k)=>{if(c>o.cnt[m])m=k});
-        if(o.cnt[m]<=0)break;o.cnt[m]--;node.innerHTML=o.ln.map((i,k)=>esc(withKashida(words[i],o.cnt[k],o.pos[k]))).join(" ");
-      }
-    });
-    el.style.removeProperty("display");
-  }
-  const SEL=".hero p.lead,.plat p,.sec-head p,.slide .txt p,.card p,.srv p,.c-cta p,.m-body p";
-  function all(root=document){root.querySelectorAll(SEL).forEach(justify)}
-  window.kashida=all;
-  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>setTimeout(all,50));
-  addEventListener("load",()=>setTimeout(all,100));
-  let t;addEventListener("resize",()=>{clearTimeout(t);t=setTimeout(all,200)});
-})();
 </script>
+<script src="text-layout.js"></script>
+<script src="ticker.js"></script>
 </body>
 </html>

@@ -28,9 +28,14 @@ pre{background:#06223f;color:#d8f3f1;padding:18px;border-radius:14px;overflow:au
 ol{padding-inline-start:22px;margin:6px 0 0}
 @media(max-width:640px){.row{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="ticker.css">
 </head>
 <body>
 <header><h1>أداة إضافة خبر جديد</h1><p>املأ الحقول، ثم انسخ الكود وألصقه في ملف site-data.js</p></header>
+<div class="ticker" id="tickerWrap" hidden data-home="./" data-editor>
+  <div class="lbl">أحدث الأخبار</div>
+  <div class="track"><div class="ticker-window"><div class="run" id="tickerRun"></div></div></div>
+</div>
 <main>
   <div class="box">
     <label>عنوان الخبر</label><input id="title" placeholder="عنوان الخبر">
@@ -97,5 +102,7 @@ $("#copy").onclick=async e=>{
   setTimeout(()=>e.target.textContent="نسخ الكود",2000);
 };
 </script>
+<script src="site-data.js"></script>
+<script src="ticker.js"></script>
 </body>
 </html>
