@@ -25,3 +25,12 @@
 .ticker:focus-within .run{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.ticker .run{animation:none}.ticker-window{overflow-x:auto}}
 .ticker[data-editor]{position:relative;top:auto;margin:24px auto 0;background:#303054;--tk:44px;--txt:#fff;--gold:#dab05f;--gold2:#e4bc75;--line:#585875}
+
+/* ticker-align: على الشاشات الواسعة يمتد الشريط من حافة الشعار (يمين) إلى حرف آخر عنصر في شريط التنقل (يسار) */
+@media (min-width:1151px){
+  .ticker:not([data-editor]){
+    width:calc(min(1440px,96%) - 6px);
+    margin-right:calc((100% - min(1440px,96%)) / 2);
+    margin-left:auto;
+  }
+}
