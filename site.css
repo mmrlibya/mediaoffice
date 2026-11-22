@@ -246,7 +246,7 @@ footer b{color:#fff}
   nav{
     position:fixed;inset:0 0 auto auto;width:min(300px,80vw);
     max-height:100vh;max-height:100dvh;overflow-y:auto;
-    background:rgba(34,34,68,.92);padding:90px 24px 24px;
+    background:rgba(34,34,68,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);padding:14px 24px 20px;
     transform:translateX(100%);transition:transform .35s,visibility .35s;visibility:hidden;z-index:60;
   }
   nav.open{visibility:visible;transform:none;box-shadow:0 0 16px rgba(20,20,52,.30)}
@@ -383,3 +383,43 @@ footer .ministry-site a:hover,footer .ministry-site a:focus-visible{box-shadow:v
     flex-shrink: 0;
   }
 }
+/* hero: no glow, emblem flush with end of flag stripe */
+.hero .glow{display:none}
+@media (min-width:901px){
+  .emblem{justify-self:end;margin-inline-end:28px;width:min(310px,70vw);padding-top:28px}
+  .emblem h2{white-space:nowrap}
+}
+
+/* even section spacing */
+section{padding:44px 0}
+#featured{padding:48px 0 44px}
+#platforms{padding:44px 0}
+.sec-head{margin-bottom:28px}
+.stats{padding:44px 0}
+.hero{padding-bottom:44px}
+@media(max-width:900px){section,#platforms{padding:36px 0}#featured{padding:40px 0 36px}.sec-head{margin-bottom:24px}.stats{padding:36px 0}}
+
+/* footer: single official-site pill, raised slightly */
+footer .ministry-site a{direction:rtl;margin-top:-4px}
+footer::before{margin-bottom:20px}
+footer{padding-bottom:22px}
+footer .ministry-site a,footer .ministry-site a:hover,footer .ministry-site a:focus-visible{border:0}
+footer .ministry-site a,footer .ministry-site a:hover,footer .ministry-site a:focus-visible{background:none;box-shadow:none}
+footer .ministry-site a:hover,footer .ministry-site a:focus-visible{color:#fff}
+
+/* square / rectangular buttons: no rounded corners */
+.btn,.chip,.share button,.s-nav,.to-top,button.btn,.burger,nav a,.dots button,.tag,footer .ministry-site a,.plat .go,.card .more{border-radius:0}
+.plat .chip-ic,.c-item .chip-ic{width:60px;height:56px}
+.search input,.coverage input:not([type=checkbox]),.coverage select,.coverage textarea,input,select,textarea{border-radius:0}
+
+.plat .chip-ic,.c-item .chip-ic{width:60px;height:56px;border-radius:14px}
+
+/* translucent header bar (frosted, like the mobile menu) */
+header.top.scrolled{background:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:none}
+header.top::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .35s;background:rgba(34,34,68,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 0 14px rgba(20,20,52,.26);pointer-events:none}
+header.top.scrolled::before{opacity:1}
+
+/* header brand: compact two-line block centred on the nav row */
+#top .brand b{line-height:1.3;margin:0}
+#top .brand small{line-height:1.3;margin-top:3px}
+#top .brand span,#top .brand div{display:flex;flex-direction:column;justify-content:center}
