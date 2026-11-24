@@ -1,6 +1,6 @@
 // Measure Arabic text with the paragraph font after the fonts have loaded.
 (() => {
-  const selector = '.hero .lead,.plat p,.sec-head p,.slide .txt p,.card p,.srv p,.c-cta p,.m-body p,.policy-card p';
+  const selector = '.hero .lead,.plat p,.sec-head p,.slide .txt p,.card p,.srv p,.c-cta p,.m-body p,.policy-card p,.notice p,.delivery p,.warn p';
   const context = document.createElement('canvas').getContext('2d');
   const originals = new WeakMap();
   const breaks = /([بتثجحخسشصضطظعغفقكلمنهيئ])(\p{M}*)(?=[آأإابتثجحخدذرزسشصضطظعغفقكلمنهوىيئةؤ])/gu;

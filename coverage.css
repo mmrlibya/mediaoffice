@@ -26,3 +26,17 @@
 .coverage .delivery .actions {justify-content:center;align-items:center;gap:8px;margin-block:16px}
 .coverage #deliveryOptions:not([hidden]) {display:contents}
 .coverage .delivery .actions .btn {width:auto;min-width:0;justify-content:center;white-space:nowrap;padding:8px 15px;font-size:.92rem;line-height:1.45}
+
+.coverage .warn{margin:18px 0 4px;padding:14px 18px;border:1px solid rgba(255,107,107,.55);border-inline-start:4px solid #ff5a5f;background:rgba(214,40,57,.14);box-shadow:0 0 12px rgba(20,20,52,.22);color:#fff}
+.coverage .warn strong{display:block;color:#ff8a8d;font-size:1.02rem;margin-bottom:4px}
+.coverage .warn strong:before{content:"⚠ ";font-size:1.05em}
+.coverage .warn p{color:#fff !important;margin:0;line-height:1.9}
+
+
+/* field titles share the main-heading colour */
+.coverage label,.coverage .schedule-parts label{color:#f3f1fb}
+.coverage label small{color:var(--muted)}
+
+/* delivery buttons: identical width and height */
+.coverage .delivery .actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,190px));justify-content:center;gap:10px}
+.coverage .delivery .actions .btn{width:100%;min-width:0;height:44px;padding:0 12px;display:flex;align-items:center;justify-content:center}

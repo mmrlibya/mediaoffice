@@ -16,7 +16,7 @@
 <meta property="og:title" content="مكتب الإعلام والتواصل | وزارة الثروة البحرية">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#2f2f55">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=20261144">
 <style>
 @font-face{
   font-family:'Ara Hamah AlFidaa';
@@ -34,11 +34,11 @@
 .brand small{display:block;font-size:clamp(.96rem,1.45vw,1.19rem);margin-top:3px}
 @media(max-width:480px){.brand{gap:9px}.brand small{max-width:18em}}
 </style>
-<link rel="stylesheet" href="ticker.css">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="stylesheet" href="ticker.css?v=2">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
 <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
@@ -54,6 +54,7 @@
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#platforms">منصاتنا</a></li>
         <li><a href="#news">الأخبار</a></li>
+        <li><a href="videos.html">الفيديوهات</a></li>
         <li><a href="#about">عن المكتب</a></li>
         <li><a href="directory.html">دليل الصفحات المعتمدة</a></li>
         <li><a href="coverage.html">طلب تغطية إعلامية</a></li>
@@ -123,7 +124,7 @@
 <!-- News -->
 <section id="news">
   <div class="container">
-    <div class="sec-head rv"><h2>الأخبار والنشاطات</h2><div class="bar"></div></div>
+    <div class="sec-head rv"><h2>الأخبار والنشاطات</h2><div class="bar"></div><p>أحدث أخبار ونشاطات وبيانات مكتب الإعلام والتواصل، يمكنك تصفيتها حسب التصنيف أو البحث فيها</p></div>
     <div class="toolbar rv">
       <div class="filters" id="filters"></div>
       <div class="search">
@@ -133,6 +134,14 @@
     </div>
     <div class="grid" id="grid"></div>
     <div class="loadmore"><button class="btn outline" id="more">عرض المزيد من الأخبار</button></div>
+  </div>
+</section>
+
+<!-- Videos -->
+<section id="videos">
+  <div class="container">
+    <div class="sec-head rv"><h2>الفيديوهات</h2><div class="bar"></div><p>إنتاجات مكتب الإعلام والتواصل المرئية من الصفحة الرسمية لوزارة الثروة البحرية على فيسبوك</p></div>
+    <div class="vgrid" id="vgrid"></div>
   </div>
 </section>
 
@@ -149,7 +158,7 @@
 <!-- Contact -->
 <section id="contact">
   <div class="container">
-    <div class="sec-head rv"><h2>تواصل معنا</h2><div class="bar"></div></div>
+    <div class="sec-head rv"><h2>تواصل معنا</h2><div class="bar"></div><p>للاستفسارات والتنسيق الإعلامي وطلبات التغطية، تواصل مع المكتب عبر القنوات التالية</p></div>
     <div class="contact-wrap">
       <div class="c-card dbl rv"><div class="c-list" id="cList"></div></div>
       <div class="c-card c-cta dbl rv">
@@ -202,7 +211,7 @@ window.SITE = {
     address: "طرابلس، ليبيا",
     phone: "+218 92 903 2712",
     email: "mediaoffice@mmr.gov.ly",
-    hours: "الأحد – الخميس | 8:00 ص – 3:00 م"
+    hours: "الأحد – الخميس | 8:30 ص – 3:00 م"
   },
 
   /* أرقام تظهر بعدّاد متحرك (عدّلها أو احذفها) */
@@ -242,7 +251,7 @@ window.NEWS = [
     title: "خبر تجريبي: إطلاق الموقع الإلكتروني الجديد لمكتب الإعلام والتواصل",
     date: "2026-11-20",
     category: "أخبار",
-    summary: "هذا خبر تجريبي لعرض شكل الخبر البارز في الواجهة. استبدله بخبرك الحقيقي عبر ملف site-data.js",
+    summary: "هذا خبر تجريبي لعرض شكل الخبر البارز في الواجهة. استبدله بخبرك الحقيقي عبر ملف site-data.js?v=20261144",
     content: [
       "هذه فقرة تجريبية توضّح كيف يظهر نص الخبر الكامل داخل النافذة المنبثقة عند الضغط على البطاقة.",
       "يمكنك كتابة عدة فقرات؛ كل فقرة تُضاف بين علامتي اقتباس وتفصلها فاصلة كما في هذا المثال."
@@ -296,7 +305,7 @@ window.LOGO_FB='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoCAYAAAB65W
 (function(){document.querySelectorAll('img[src="images/logo.png"]').forEach(function(i){function fb(){i.onerror=null;i.src=window.LOGO_FB}i.onerror=fb;if(i.complete&&!i.naturalWidth)fb()})})();
 
 </script>
-<script src="site-data.js"></script>
+<script src="site-data.js?v=20261144"></script>
 <script>
 const S=(p,w=26,f="none")=>`<svg width="${w}" height="${w}" viewBox="0 0 24 24" fill="${f}" stroke="${f==='none'?'currentColor':'none'}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
 const ICONS={
@@ -339,6 +348,7 @@ function media(n){
   return autoCover(n.category);
 }
 function autoCover(cat){const k=catOf(cat);return `<div class="media auto" style="width:100%;height:100%;background:linear-gradient(135deg,${k.c[0]},${k.c[1]})">${ICONS[k.i]}</div>`}
+var PLAY='<svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l11-6.5a1 1 0 0 0 0-1.72l-11-6.5A1 1 0 0 0 8 5.5z"/></svg>';
 const news=(window.NEWS||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
 const SITE=window.SITE;
 
@@ -404,7 +414,7 @@ function draw(){
   const part=list.slice(0,shown);
   $("#grid").innerHTML=part.length?part.map(n=>`
     <article class="card dbl rv in" data-open="${esc(n.id)}" tabindex="0">
-      <div class="thumb"><div class="media" style="width:100%;height:100%">${media(n)}</div><span class="tag">${esc(n.category)}</span></div>
+      <div class="thumb"><div class="media" style="width:100%;height:100%">${media(n)}</div>${n.video?`<span class="vplay sm">${PLAY}</span>`:""}<span class="tag">${esc(n.category)}</span></div>
       <div class="body"><div class="meta"><span class="calendar-icon" aria-hidden="true">${ICONS.calendar}</span> ${fmt(n.date)}</div><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p><span class="rm">اقرأ المزيد <span>←</span></span></div>
     </article>`).join(""):`<div class="empty">لا توجد أخبار مطابقة.</div>`;
   if(window.kashida)window.kashida($("#grid"));
@@ -412,12 +422,28 @@ function draw(){
 }
 draw();
 
+
+/* facebook videos */
+const fbSrc=(u,auto)=>"https://www.facebook.com/plugins/video.php?href="+encodeURIComponent(u)+"&show_text=false&width=560"+(auto?"&autoplay=true":"");
+const fbFrame=(u,auto,vert)=>`<div class="fbv${vert?' vert':''}"><iframe src="${fbSrc(u,auto)}" title="فيديو" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen scrolling="no" frameborder="0"></iframe></div>`;
+(function(){
+  const allVids=(window.VIDEOS||[]).filter(v=>v&&v.url).slice().sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+  const vids=allVids.slice(0,3);
+  if(allVids.length>3)$("#vgrid").insertAdjacentHTML("afterend",'<div class="loadmore"><a class="btn outline" href="videos.html">عرض جميع الفيديوهات</a></div>');
+  if(!vids.length){$("#vgrid").innerHTML='<div class="vempty dbl"><div class="vplay" style="position:static;transform:none;margin:0 auto 14px">'+PLAY+'</div><h3>الفيديوهات قريباً</h3><p>سيتم نشر إنتاجات مكتب الإعلام والتواصل المرئية هنا.</p></div>';return;}
+  /* المشغّل يُحمَّل مباشرة بصورة الفيديو الخاصة به، ويبدأ التشغيل فور الضغط على زره */
+  $("#vgrid").innerHTML=vids.map(v=>`<article class="vcard dbl" tabindex="0" role="button" aria-label="تشغيل: ${esc(v.title||'فيديو')}" data-url="${esc(v.url)}" data-title="${esc(v.title||'فيديو')}" data-date-text="${v.date?fmt(v.date):''}" data-vertical="${v.vertical?1:0}">
+    <div class="vmedia${v.vertical?' vert':''}"><span class="vcover"></span><iframe src="${fbSrc(v.url,false)}" title="${esc(v.title||"فيديو")}" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen scrolling="no" frameborder="0"></iframe></div>
+    <div class="vbody"><h3>${esc(v.title||"فيديو")}</h3><div class="meta">${v.date?fmt(v.date):""}</div>
+    <a class="vlink" href="${esc(v.url)}" target="_blank" rel="noopener">فتح على فيسبوك ↗</a></div></article>`).join("");
+})();
+
 /* modal */
 const modal=$("#modal");
 function openNews(id,push=true){
   const n=news.find(x=>x.id===id);if(!n)return;
   const paras=(Array.isArray(n.content)?n.content:[n.content||n.summary]).map(p=>`<p>${esc(p)}</p>`).join("");
-  $("#mBox").innerHTML=`<button class="m-close" aria-label="إغلاق">×</button><div class="m-media">${media(n)}</div>
+  $("#mBox").innerHTML=`<button class="m-close" aria-label="إغلاق">×</button><div class="m-media">${n.video?fbFrame(n.video,false,false):media(n)}</div>
     <div class="m-body"><span class="tag">${esc(n.category)}</span><h3>${esc(n.title)}</h3><div class="meta"><span class="calendar-icon" aria-hidden="true">${ICONS.calendar}</span> ${fmt(n.date)}</div>${paras}
     <div class="share"><button data-copy>🔗 نسخ رابط الخبر</button><button data-print>🖨 طباعة</button></div></div>`;
   modal.classList.add("open");document.body.style.overflow="hidden";requestAnimationFrame(()=>window.kashida&&kashida(modal));
@@ -466,6 +492,7 @@ $("#nav").onclick=e=>{if(e.target.tagName==="A")$("#nav").classList.remove("open
 
 </script>
 <script src="text-layout.js"></script>
+<script src="video-modal.js?v=1"></script>
 <script src="ticker.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
 <meta property="og:title" content="طلب تغطية إعلامية | مكتب الإعلام والتواصل">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#2f2f55">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=20261144">
 <style>
 @font-face{
   font-family:'Ara Hamah AlFidaa';
@@ -30,11 +30,11 @@
 @media(max-width:480px){.brand{gap:9px}.brand small{max-width:18em}}
 </style>
 <link rel="stylesheet" href="coverage.css">
-<link rel="stylesheet" href="ticker.css">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="stylesheet" href="ticker.css?v=2">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
 <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
@@ -50,6 +50,7 @@
         <li><a href="./#home">الرئيسية</a></li>
         <li><a href="./#platforms">منصاتنا</a></li>
         <li><a href="./#news">الأخبار</a></li>
+        <li><a href="videos.html">الفيديوهات</a></li>
         <li><a href="./#about">عن المكتب</a></li>
         <li><a href="directory.html">دليل الصفحات المعتمدة</a></li>
         <li><a href="coverage.html" aria-current="page">طلب تغطية إعلامية</a></li>
@@ -71,7 +72,8 @@
 <h2 class="form-heading" id="section-0">الجهة الطالبة والمنسق</h2><fieldset aria-labelledby="section-0"><div class="fields"><label for="req-org">الإدارة أو المكتب المنظّم للنشاط<input type="text" name="org" id="req-org" required ></label><label for="req-coordinator">اسم المنسق<input type="text" name="coordinator" id="req-coordinator" required ></label><label for="req-phone">هاتف المنسق<input type="tel" name="phone" id="req-phone" required dir="ltr"></label><label for="req-email">بريد المنسق<input type="email" name="email" id="req-email" required dir="ltr"></label></div></fieldset><h2 class="form-heading" id="section-1">بيانات الطلب</h2><fieldset aria-labelledby="section-1"><div class="fields"><label for="req-action">نوع الطلب<select name="action" id="req-action" required ><option>طلب جديد</option><option>تعديل موعد أو بيانات</option><option>إشعار بالتأجيل</option><option>إشعار بالإلغاء</option></select></label><label for="req-title">اسم النشاط<input type="text" name="title" id="req-title" required ></label><div id="previous" hidden><label for="req-reference">مرجع الطلب السابق أو تاريخه<input type="text" name="reference" id="req-reference" required disabled></label><label for="req-change">تفاصيل التعديل أو سبب التأجيل أو الإلغاء<textarea rows="3" maxlength="3000" name="change" id="req-change" required disabled></textarea></label></div></div></fieldset><div id="activity"><h2 class="form-heading" id="section-2">تفاصيل النشاط</h2><fieldset aria-labelledby="section-2"><div class="fields"><label for="req-category">طبيعة النشاط<select name="category" id="req-category" required ><option>اجتماع</option><option>زيارة ميدانية</option><option>استقبال وفد</option><option>ورشة عمل</option><option>فعالية</option><option>نشاط آخر</option></select></label><div role="group" aria-labelledby="date-label"><span id="date-label">تاريخ النشاط</span><div class="schedule-parts"><label>السنة<select id="activity-year" required><option value="">اختر</option><option>2026</option><option>2027</option></select></label><label>الشهر<select id="activity-month" required><option value="">اختر</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select></label><label>اليوم<select id="activity-day" required><option value="">اختر</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option></select></label></div><input type="hidden" name="date" data-label="تاريخ النشاط"></div><div role="group" aria-labelledby="time-label"><span id="time-label">وقت البدء بتوقيت ليبيا</span><div class="schedule-parts"><label>الساعة<select id="activity-hour" required><option value="">اختر</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select></label><label>الدقيقة<select id="activity-minute" required><option value="">اختر</option><option>00</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option><option>49</option><option>50</option><option>51</option><option>52</option><option>53</option><option>54</option><option>55</option><option>56</option><option>57</option><option>58</option><option>59</option></select></label><label>الفترة<select id="activity-period" required><option value="">اختر</option><option>ص</option><option>م</option></select></label></div><input type="hidden" name="time" data-label="وقت البدء بتوقيت ليبيا"></div><label for="req-place">المدينة ومكان النشاط<input type="text" name="place" id="req-place" required ></label><label for="req-goal">هدف النشاط<textarea rows="3" maxlength="3000" name="goal" id="req-goal" required ></textarea></label><label for="req-partners">الجهات المشاركة<textarea rows="3" maxlength="3000" name="partners" id="req-partners" required ></textarea></label></div></fieldset><h2 class="form-heading" id="section-3">التغطية والترتيبات</h2><fieldset aria-labelledby="section-3"><div class="fields"><label for="req-priority">أولوية الطلب<select name="priority" id="req-priority" required ><option>طلب عادي</option><option>طلب عاجل</option></select></label><div id="urgent" hidden><label for="req-reason">سبب الاستعجال<textarea rows="3" maxlength="3000" name="reason" id="req-reason" required disabled></textarea></label></div><div class="wide"><span id="types-label">نوع التغطية المطلوبة (يمكن اختيار أكثر من نوع)</span><div class="choices" role="group" aria-labelledby="types-label"><label><input type="checkbox" name="media" value="تصوير فوتوغرافي">تصوير فوتوغرافي</label><label><input type="checkbox" name="media" value="تصوير فيديو">تصوير فيديو</label><label><input type="checkbox" name="media" value="إعداد خبر ونشره">إعداد خبر ونشره</label><label><input type="checkbox" name="media" value="توثيق وأرشفة">توثيق وأرشفة</label><label><input type="checkbox" name="media" value="تغطية أخرى">تغطية أخرى</label></div></div><label for="req-arrangements">ترتيبات الدخول والتنقل والتصاريح وقيود التصوير أو النشر <small>(اختياري)</small><textarea rows="3" maxlength="3000" name="arrangements" id="req-arrangements" ></textarea></label><label for="req-letter">رقم إشاري المخاطبة وتاريخها إن صدرت <small>(اختياري)</small><input type="text" name="letter" id="req-letter" ></label></div></fieldset></div>
 <div class="delivery"><strong>إحالة الطلب إلى مكتب الإعلام والتواصل</strong>
 <p>جهّز الرسالة وراجعها هنا، ثم اختر فتحها في بريدك أو انسخها. أرفق المخاطبة الرسمية والبرنامج أو الدعوة إن وُجدا، ثم اضغط «إرسال» من بريدك. يراجع المكتب الطلب ويتولى تحديد فريق التغطية وإصدار التكليف.</p>
-<div class="actions"><button class="btn primary" type="submit">تجهيز رسالة الطلب</button><button class="btn" type="button" id="copy">نسخ نص الطلب</button><div id="deliveryOptions" hidden><button class="btn" type="button" id="gmailDraft">فتح في Gmail</button><button class="btn" type="button" id="appDraft">فتح في تطبيق البريد</button></div></div><p role="status" id="status"></p><textarea id="manual" rows="10" readonly hidden aria-label="نص الطلب للنسخ اليدوي"></textarea>
+<div class="warn" role="note"><strong>تنبيه مهم</strong><p>يجب إرفاق صورة من الكتاب الرسمي (المخاطبة) مع الرسالة قبل إرسالها، ولا يُنظر في أي طلب تغطية غير مرفق به الكتاب الرسمي.</p></div>
+<div class="actions"><button class="btn primary" type="submit">تجهيز رسالة الطلب</button><button class="btn primary" type="button" id="copy">نسخ نص الطلب</button><div id="deliveryOptions" hidden><button class="btn primary" type="button" id="gmailDraft">فتح في Gmail</button><button class="btn primary" type="button" id="appDraft">فتح في تطبيق البريد</button></div></div><p role="status" id="status"></p><textarea id="manual" rows="10" readonly hidden aria-label="نص الطلب للنسخ اليدوي"></textarea>
 </div></form><a class="directory-return btn primary" href="./#home">العودة إلى الرئيسية</a>
 </main>
 <footer id="footer">
@@ -80,7 +82,7 @@
   </div>
 </footer>
 <button class="to-top" id="toTop" aria-label="أعلى الصفحة">↑</button>
-<script src="site-data.js"></script>
+<script src="site-data.js?v=20261144"></script>
 <script>
 document.querySelector("#brandMin").textContent=SITE.ministrySub;
 const nav=document.querySelector("#nav");
