@@ -25,3 +25,12 @@
   }
   bar.hidden = false;
 })();
+
+/* إغلاق القائمة المنسدلة عند النقر في أي مكان خارجها */
+document.addEventListener("click",function(e){
+  var nav=document.getElementById("nav"),b=document.getElementById("burger");
+  if(!nav||!nav.classList.contains("open"))return;
+  if(e.target.closest("#nav")||e.target.closest("#burger"))return;
+  nav.classList.remove("open");
+  if(b)b.setAttribute("aria-expanded","false");
+});

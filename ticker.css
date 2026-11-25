@@ -1,5 +1,5 @@
 /* ---------- Ticker (أعلى الصفحة) ---------- */
-.ticker{position:absolute;top:112px;left:0;right:0;z-index:49;height:var(--tk);width:min(1250px,92%);margin:0 auto;border:1px solid var(--line);border-radius:0;box-shadow:var(--btn-sh);background:transparent;display:flex;align-items:stretch;overflow:hidden}
+.ticker{position:absolute;top:112px;left:0;right:0;z-index:49;height:var(--tk);width:min(1250px,92%);margin:0 auto;border:1px solid var(--line);border-radius:0;box-shadow:var(--btn-sh),0 6px 16px rgba(10,10,28,.32);background:transparent;display:flex;align-items:stretch;overflow:hidden}
 .ticker .lbl{background:linear-gradient(135deg,#d0a04e,#b88438);color:#26254b;font-weight:700;padding:0 24px;white-space:nowrap;flex:none;display:flex;align-items:center;font-size:.92rem}
 .ticker .track{
   flex:1;overflow:hidden;display:flex;align-items:center;
