@@ -63,7 +63,7 @@ nav a{display:block;white-space:nowrap;color:var(--muted);padding:8px 14px;borde
 .burger{display:none;background:none;border:0;color:#fff;font-size:1.9rem}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;padding:calc(166px + var(--tk)) 0 56px;overflow:hidden}
+.hero{position:relative;padding:calc(154px + var(--tk)) 0 56px;overflow:hidden}
 .hero .glow{position:absolute;width:640px;height:640px;border-radius:50%;inset-inline-end:auto;left:-120px;top:40px;background:radial-gradient(circle,rgba(192,143,64,.22),transparent 65%);animation:breathe 7s ease-in-out infinite alternate}
 @keyframes breathe{to{transform:scale(1.15);opacity:.7}}
 .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
@@ -253,7 +253,7 @@ footer b{color:#fff}
   nav ul{flex-direction:column}nav a{display:block;padding:12px 16px}
 }
 @media(max-width:900px){
-  .hero{padding-top:calc(146px + var(--tk))}
+  .hero{padding-top:calc(150px + var(--tk))}
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .emblem{order:-1}.emblem .ring{width:200px}.emblem h2{font-size:1.5rem;margin-top:28px}
   .slider{height:480px}.slide .txt{padding:26px 24px 64px}
@@ -307,7 +307,7 @@ footer .f1{color:var(--txt)}
   nav a{padding-inline:7px;font-size:.9rem}
   .brand{gap:8px}
 }
-.directory{min-height:80vh;padding-block:calc(145px + var(--tk)) 72px}
+.directory{min-height:80vh;padding-block:calc(133px + var(--tk)) 72px}
 .directory h1{font-size:clamp(1.8rem,4vw,2.6rem)}
 .directory-group{margin-block:36px}
 .directory-group h2{font-size:1.35rem;margin-bottom:14px}
@@ -551,3 +551,59 @@ header.top.scrolled::before{opacity:1}
 .directory-wide .directory-card{flex:0 1 calc((100% - 66px) / 2 + 22px);max-width:calc((100% - 66px) / 2 + 22px);min-height:125px}
 @media(max-width:699px){.directory-wide .directory-card{flex-basis:100%;max-width:100%}}
 .directory-card span .ext{display:inline-block;vertical-align:-2px;margin-inline-start:4px}
+
+/* منصاتنا: توسيط الأيقونة والنصوص داخل البطاقات */
+.plat{align-items:center;text-align:center}
+.plat h3,.plat p,.plat .go{text-align:center}
+
+/* عن المكتب: توسيط الأيقونة والعناوين */
+.srv{text-align:center}
+.srv .ico{margin-inline:auto}
+.srv h4,.srv p{text-align:center}
+
+/* أزرار التنقل: السهم في المنتصف تماماً وتظهر على الشاشات الصغيرة */
+.s-nav{display:grid;place-items:center;padding:0;line-height:1}
+.s-nav svg{display:block}
+.slide .txt{box-sizing:border-box;width:100%;min-width:0}
+@media(max-width:900px){
+  .s-nav{display:grid;width:38px;height:38px;top:42%}
+  .s-prev{inset-inline-end:8px}.s-next{inset-inline-start:8px}
+  .s-nav svg{width:18px;height:18px}
+  .slide .txt{padding-inline:54px}
+}
+
+/* توحيد أزرار الموقع على نمط أزرار «نسخ الرابط / طباعة»: إطار شفاف ويمتلئ بالذهبي عند التمرير */
+.btn,.btn.primary,.btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.25);color:var(--muted);filter:none;transform:none;transition:.25s}
+.btn:hover,.btn.primary:hover,.btn.outline:hover,.btn:focus-visible{background:var(--gold);color:#26254b;border-color:var(--gold);filter:none;transform:none}
+
+/* رموز عناصر القائمة */
+nav a{display:flex;align-items:center;gap:7px}
+nav a .nav-ic{flex:none;width:16px;height:16px;opacity:.85;transition:.25s}
+nav a:hover .nav-ic{opacity:1}
+@media(min-width:1280px){nav a{gap:5px}nav a .nav-ic{width:15px;height:15px}}
+
+nav a[aria-current="page"] .nav-ic{opacity:1}
+
+/* شريط القائمة: الخط الأسفل بدل التحديد الأصفر، وعرضه مساوٍ لشريط الأخبار */
+nav a:hover,nav a[aria-current="page"]{background:transparent!important;color:var(--gold2)}
+nav a>span{position:relative;display:inline-block;padding-bottom:3px}
+nav a>span::after{content:"";position:absolute;inset-inline:0;bottom:-1px;height:2px;background:var(--gold2);transform:scaleX(0);transition:transform .25s}
+nav a:hover>span::after,nav a[aria-current="page"]>span::after{transform:scaleX(1)}
+@media(min-width:1280px){
+  .ticker.ticker:not([data-editor]){width:min(1440px,96%);margin-inline:auto}
+  #top .brand small{white-space:nowrap;font-size:.78rem}
+}
+@media(min-width:1280px) and (max-width:1599px){
+  #top nav a{padding-inline:5px;font-size:.86rem;gap:4px}
+  #top nav a .nav-ic{width:13px;height:13px}
+  #top .nav{gap:10px}
+}
+@media(min-width:1280px) and (max-width:1439px){
+  #top nav a{padding-inline:3px;font-size:.8rem;gap:3px}
+  #top nav a .nav-ic{width:12px;height:12px}
+  #top nav ul{gap:1px}
+  #top .nav{gap:8px}
+}
+}
+#top .brand b{white-space:nowrap;overflow:visible}
+@media(min-width:1280px) and (max-width:1319px){#top nav a{padding-inline:2px}}
