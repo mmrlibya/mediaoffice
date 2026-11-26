@@ -69,11 +69,15 @@
 <main class="directory container">
   <div class="sec-head">
     <h1>القرارات والبيانات</h1>
-    <p>نسخ القرارات والبيانات الصادرة عن وزارة الثروة البحرية ومكتب الإعلام والتواصل، يمكن قراءتها من الصفحة نفسها أو تحميلها بصيغة PDF</p>
+    <p>تضم هذه الصفحة نسخاً من القرارات والبيانات والوثائق الرسمية الصادرة عن وزارة الثروة البحرية ومكتب الإعلام والتواصل، بما في ذلك القرارات التنظيمية المعتمدة ذات الصلة بالوزارة.</p>
+    <p>ويمكن للزوار الاطلاع على الوثائق مباشرة من الصفحة أو تحميلها بصيغة PDF.</p>
   </div>
-  <div class="doc-tools" id="docTools" hidden>
-    <div class="doc-chips" id="docTypes" role="group" aria-label="نوع الوثيقة"></div>
-    <label class="doc-search"><span class="sr-only">بحث</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="docQ" type="search" placeholder="ابحث بالعنوان أو الرقم" autocomplete="off"></label>
+  <div class="toolbar" id="docTools" hidden>
+    <div class="filters" id="docTypes" role="group" aria-label="نوع الوثيقة"></div>
+    <div class="search">
+      <input id="docQ" type="search" placeholder="ابحث في القرارات والبيانات…" aria-label="بحث" autocomplete="off">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </div>
   </div>
   <div class="doc-grid" id="docGrid"></div>
   <a class="directory-return btn primary" href="./#home">العودة إلى الرئيسية</a>
@@ -84,7 +88,7 @@
   </div>
 </footer>
 <button class="to-top" id="toTop" aria-label="أعلى الصفحة">↑</button>
-<script src="site-data.js?v=20261161"></script>
+<script src="site-data.js?v=20261164"></script>
 <script>
 document.querySelector("#brandMin").textContent=SITE.ministrySub;
 const nav=document.querySelector("#nav");
@@ -117,6 +121,7 @@ const fbSrc=(u,auto)=>"https://www.facebook.com/plugins/video.php?href="+encodeU
     const list=docs.filter(d=>(cur==="الكل"||d.type===cur)&&(!k||[d.title,d.number,d.issuer,d.summary].join(" ").includes(k)));
     grid.innerHTML=list.length?list.map(d=>`<article class="doc-card dbl">
       <span class="doc-mark" aria-hidden="true">${FILE}</span>
+      ${d.thumb?`<button type="button" class="doc-thumb" data-read="${esc(d.file)}" data-title="${esc(d.title)}" aria-label="قراءة: ${esc(d.title)}"><img src="${esc(d.thumb)}" alt="معاينة الصفحة الأولى من الوثيقة" loading="lazy"><span class="doc-thumb-cta">قراءة الوثيقة</span></button>`:""}
       <div class="doc-top"><span class="tag">${esc(d.type||"وثيقة")}</span>${d.issuer?`<span class="doc-issuer">${esc(d.issuer)}</span>`:""}</div>
       <h3>${esc(d.title)}</h3>
       <div class="meta">${d.number?`<span>رقم ${esc(d.number)}</span>`:""}${d.date?`<span>${fmt(d.date)}</span>`:""}</div>
@@ -150,6 +155,6 @@ updateScrollState();
 addEventListener("scroll",updateScrollState,{passive:true});
 toTop.onclick=()=>scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
 </script>
-<script src="text-layout.js?v=5"></script>
+<script src="text-layout.js?v=6"></script>
 <script src="ticker.js?v=3"></script>
 </body></html>

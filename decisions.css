@@ -1,11 +1,6 @@
 /* صفحة القرارات والبيانات */
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.doc-tools{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin:0 0 28px}
-.doc-tools[hidden]{display:none}
-.doc-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.doc-search{display:flex;align-items:center;gap:8px;min-width:min(320px,100%);padding:0 14px;height:42px;border:1.5px solid rgba(255,255,255,.25);color:var(--muted);background:rgba(34,34,68,.45)}
-.doc-search:focus-within{border-color:var(--gold2);color:var(--gold2)}
-.doc-search input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:inherit;font-size:.95rem}
+.toolbar[hidden]{display:none}
 .doc-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
 .doc-grid>.doc-card{flex:1 1 calc((100% - 44px)/3);max-width:calc((100% - 44px)/3)}
 .doc-grid>.vempty{flex:1 1 100%;max-width:100%}
@@ -31,3 +26,9 @@
 .doc-head-actions .btn{padding:5px 14px;font-size:.85rem}
 .doc-view{flex:1;min-height:0;background:#fff}
 .doc-view iframe{display:block;width:100%;height:100%;border:0}
+
+.doc-thumb{position:relative;display:block;width:100%;aspect-ratio:4/3;padding:0;margin-bottom:4px;overflow:hidden;border:1px solid rgba(255,255,255,.25);background:#fff;cursor:pointer}
+.doc-thumb img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
+.doc-card:hover .doc-thumb img{transform:scale(1.04)}
+.doc-thumb-cta{position:absolute;inset-inline:0;bottom:0;padding:10px;text-align:center;font-weight:700;font-size:.9rem;color:#26254b;background:linear-gradient(180deg,#f0cf8a,#d3a24f);transform:translateY(100%);transition:transform .3s}
+.doc-card:hover .doc-thumb-cta,.doc-thumb:focus-visible .doc-thumb-cta{transform:none}
