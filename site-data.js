@@ -43,7 +43,9 @@ window.SITE = {
     { name: "تيليجرام", handle: "قناة المكتب الرسمية", icon: "telegram", url: "https://t.me/MMRMedia" },
     { name: "بلو سكاي", handle: "حساب المكتب الرسمي", icon: "bluesky", url: "https://bsky.app/profile/mmr.id.ly" },
     { name: "فايبر",   handle: "قناة المكتب الرسمية", icon: "viber", url: "https://invite.viber.com/?g2=AQBmCLbcQBo1xlcXnOtDM0iU54M0FfDL5Kn6hOlRgG2xcAPt0uUorzZGPcBJAmgn" },
-    { name: "براندفيتش", handle: "الهوية البصرية للمكتب", icon: "brandfetch", cta: "اطّلع على الهوية", url: "https://brandfetch.com/mmr.id.ly" }
+    { name: "براندفيتش", handle: "الهوية البصرية للمكتب", icon: "brandfetch", cta: "اطّلع على الهوية", url: "https://brandfetch.com/mmr.id.ly" },
+    { name: "بنترست", handle: "حساب المكتب الرسمي", icon: "pinterest", cta: "تابعنا", url: "https://www.pinterest.com/MMRLibya_Media" },
+    { name: "ماستودون", handle: "حساب المكتب الرسمي", icon: "mastodon", cta: "تابعنا", url: "https://mastodon.social/@mmrlibya" }
   ],
 
   /* بيانات التواصل — استبدلها ببياناتكم الرسمية */
@@ -184,6 +186,8 @@ window.VIDEOS = [
    { title:"عنوان الوثيقة", type:"قرار" أو "بيان", issuer:"وزارة الثروة البحرية" أو "مكتب الإعلام والتواصل",
      number:"رقم القرار (اختياري)", date:"2026-01-31", file:"docs/اسم-الملف.pdf", summary:"وصف مختصر (اختياري)" } */
 window.DOCS = [
+  { title:"قرار وزير الثروة البحرية رقم (186) لسنة 2023م بشأن حظر الصيد بالجرف في بعض الأوقات",
+    type:"قرار", issuer:"وزير الثروة البحرية", number:"186 لسنة 2023م", date:"2023-06-01", file:"docs/decision-186-2023.pdf", pages:1, pagesDir:"docs/pages/decision-186-2023/", thumb:"docs/previews/decision-186-2023.jpg" },
   { title:"قرار مجلس وزراء حكومة الوحدة الوطنية رقم (588) لسنة 2021م باعتماد الهيكل التنظيمي واختصاصات وزارة الثروة البحرية وتنظيم جهازها الإداري",
-    type:"قرار", issuer:"مجلس وزراء حكومة الوحدة الوطنية", number:"588 لسنة 2021م", date:"2021-11-21", file:"docs/decision-588-2021.pdf", thumb:"docs/previews/decision-588-2021.jpg" },
+    type:"قرار", issuer:"مجلس وزراء حكومة الوحدة الوطنية", number:"588 لسنة 2021م", date:"2021-11-21", file:"docs/decision-588-2021.pdf", pages:13, pagesDir:"docs/pages/decision-588-2021/", thumb:"docs/previews/decision-588-2021.jpg" },
 ];

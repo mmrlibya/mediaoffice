@@ -32,3 +32,8 @@
 .doc-card:hover .doc-thumb img{transform:scale(1.04)}
 .doc-thumb-cta{position:absolute;inset-inline:0;bottom:0;padding:10px;text-align:center;font-weight:700;font-size:.9rem;color:#26254b;background:linear-gradient(180deg,#f0cf8a,#d3a24f);transform:translateY(100%);transition:transform .3s}
 .doc-card:hover .doc-thumb-cta,.doc-thumb:focus-visible .doc-thumb-cta{transform:none}
+.doc-pages{overflow-y:auto;-webkit-overflow-scrolling:touch;background:#2a2a52;padding:14px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.doc-page{margin:0;width:100%;max-width:860px}
+.doc-page img{display:block;width:100%;height:auto;background:#fff;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.doc-page figcaption{text-align:center;color:#b8bde0;font-size:.8rem;margin-top:6px}
+@media(max-width:560px){.doc-head{padding:10px 14px;padding-inline-start:60px;gap:8px}.doc-head h3{font-size:.92rem;line-height:1.6}.doc-head-actions{flex-wrap:nowrap;width:100%}.doc-head-actions .btn{flex:1;text-align:center;padding:5px 8px;font-size:.78rem;white-space:nowrap}.doc-pages{padding:8px;gap:10px}}
